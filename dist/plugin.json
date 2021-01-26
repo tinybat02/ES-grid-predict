@@ -1,0 +1,21 @@
+{
+  "type": "panel",
+  "name": "ES Grid Predict",
+  "id": "id-grid-predict-by-id",
+  "dataFormats": ["table"],
+  "info": {
+    "description": "ES Grid Predict",
+    "author": {
+      "name": "Nam Le"
+    },
+    "keywords": [],
+    "screenshots": [],
+    "version": "1.0.0",
+    "updated": "2021-01-26"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "6.3.x",
+    "plugins": []
+  }
+}
