@@ -111,6 +111,11 @@ export class MainPanel extends PureComponent<Props, State> {
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (prevProps.data.series !== this.props.data.series) {
       this.map.removeLayer(this.heatLayer);
+      if (this.props.data.series.length == 0) {
+        this.perID = {};
+        this.setState({ current: 'None', options: [] });
+        return;
+      }
       if (!this.props.options.geojson) return;
 
       const { buffer } = this.props.data.series[0].fields[0].values as Buffer;

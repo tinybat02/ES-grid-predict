@@ -81263,6 +81263,16 @@ function (_super) {
   MainPanel.prototype.componentDidUpdate = function (prevProps, prevState) {
     if (prevProps.data.series !== this.props.data.series) {
       this.map.removeLayer(this.heatLayer);
+
+      if (this.props.data.series.length == 0) {
+        this.perID = {};
+        this.setState({
+          current: 'None',
+          options: []
+        });
+        return;
+      }
+
       if (!this.props.options.geojson) return;
       var buffer = this.props.data.series[0].fields[0].values.buffer;
       this.perID = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_11__["processData"])(buffer);
